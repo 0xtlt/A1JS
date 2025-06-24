@@ -46,25 +46,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Update package version
-        run: |
-          # Extract version from GitHub release tag (remove 'v' prefix if present)
-          VERSION=${GITHUB_REF#refs/tags/}
-          VERSION=${VERSION#v}
-          echo "Release version: $VERSION"
-
-          # Get current package version
-          CURRENT_VERSION=$(node -p "require('./package.json').version")
-          echo "Current package version: $CURRENT_VERSION"
-
-          # Only update version if it's different
-          if [ "$VERSION" != "$CURRENT_VERSION" ]; then
-            echo "Updating package version from $CURRENT_VERSION to $VERSION"
-            npm version $VERSION --no-git-tag-version
-          else
-            echo "Package version is already $VERSION, no update needed"
-          fi
-
       - name: Publish to NPM
         run: npm publish
         env:

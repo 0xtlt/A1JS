@@ -1,0 +1,51 @@
+{
+  "name": "a1js",
+  "version": "1.0.0",
+  "description": "A TypeScript library for manipulating JavaScript tables using spreadsheet-style cell references (A1, B2, etc.) with CSV export capabilities",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "spreadsheet",
+    "csv",
+    "table",
+    "a1",
+    "cell",
+    "reference",
+    "typescript",
+    "esm"
+  ],
+  "author": "Thomas Tastet",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.3",
+    "jest": "^30.0.2",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xtlt/A1JS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0xtlt/A1JS/issues"
+  },
+  "homepage": "https://github.com/0xtlt/A1JS#readme"
+}
